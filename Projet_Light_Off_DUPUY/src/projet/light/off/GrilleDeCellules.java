@@ -12,7 +12,7 @@ package projet.light.off;
 import java.util.Random;
 
 public class GrilleDeCellules {
-    private CelluleLumineuse[][] matriceCellules;
+    private final CelluleLumineuse[][] matriceCellules;
 
     public GrilleDeCellules(int n) {
         matriceCellules = new CelluleLumineuse[n][n];
@@ -21,22 +21,22 @@ public class GrilleDeCellules {
     }
 
     private void initialiserGrille() {
-        for (int i = 0; i < matriceCellules.length; i++) {
-            for (int j = 0; j < matriceCellules[i].length; j++) {
-                matriceCellules[i][j] = new CelluleLumineuse();
+        for (CelluleLumineuse[] matriceCellule : matriceCellules) {
+            for (int j = 0; j < matriceCellule.length; j++) {
+                matriceCellule[j] = new CelluleLumineuse();
             }
         }
     }
 
     public void activerLigneDeCellules(int idLigne) {
-        for (int colonne = 0; colonne < matriceCellules[idLigne].length; colonne++) {
-            matriceCellules[idLigne][colonne].inverserEtat();
+        for (CelluleLumineuse matriceCellule : matriceCellules[idLigne]) {
+            matriceCellule.inverserEtat();
         }
     }
 
     public void activerColonneDeCellules(int idColonne) {
-        for (int ligne = 0; ligne < matriceCellules.length; ligne++) {
-            matriceCellules[ligne][idColonne].inverserEtat();
+        for (CelluleLumineuse[] matriceCellule : matriceCellules) {
+            matriceCellule[idColonne].inverserEtat();
         }
     }
 
@@ -58,20 +58,16 @@ public class GrilleDeCellules {
         int choix = random.nextInt(4);
 
         switch (choix) {
-            case 0:
+            case 0 -> {
                 int ligne = random.nextInt(matriceCellules.length);
                 activerLigneDeCellules(ligne);
-                break;
-            case 1:
+            }
+            case 1 -> {
                 int colonne = random.nextInt(matriceCellules.length);
                 activerColonneDeCellules(colonne);
-                break;
-            case 2:
-                activerDiagonaleDescendante();
-                break;
-            case 3:
-                activerDiagonaleMontante();
-                break;
+            }
+            case 2 -> activerDiagonaleDescendante();
+            case 3 -> activerDiagonaleMontante();
         }
     }
 
@@ -87,9 +83,9 @@ public class GrilleDeCellules {
     }
 
     public boolean estResolue() {
-        for (int ligne = 0; ligne < matriceCellules.length; ligne++) {
-            for (int colonne = 0; colonne < matriceCellules[ligne].length; colonne++) {
-                if (matriceCellules[ligne][colonne].estAllumee()) {
+        for (CelluleLumineuse[] matriceCellule : matriceCellules) {
+            for (CelluleLumineuse matriceCellule1 : matriceCellule) {
+                if (matriceCellule1.estAllumee()) {
                     return false; // Si une cellule est encore allumée, la grille n'est pas résolue.
                 }
             }
@@ -98,9 +94,9 @@ public class GrilleDeCellules {
     }
 
     public void afficherGrille() {
-        for (int ligne = 0; ligne < matriceCellules.length; ligne++) {
-            for (int colonne = 0; colonne < matriceCellules[ligne].length; colonne++) {
-                System.out.print(matriceCellules[ligne][colonne] + " ");
+        for (CelluleLumineuse[] matriceCellule : matriceCellules) {
+            for (CelluleLumineuse matriceCellule1 : matriceCellule) {
+                System.out.print(matriceCellule1 + " ");
             }
             System.out.println();
         }

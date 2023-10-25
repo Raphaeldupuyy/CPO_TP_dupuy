@@ -7,13 +7,6 @@ package projet.light.off;
 import java.util.Scanner;
 import projet.light.off.GrilleDeCellules;
 
-
-/**
- * La classe Partie représente une partie du jeu Light Off.
- * Elle gère l'interaction entre le joueur et la grille.
- */
-import java.util.Scanner;
-
 public class Partie {
     private GrilleDeCellules grille;
     private int coups;
@@ -41,7 +34,7 @@ public class Partie {
             try {
                 int coord = Integer.parseInt(saisie);
                 if (coord >= 0 && coord < grille.getTaille()) {
-                    grille.inverserLigneColonne(coord);
+                    grille.activerLigneDeCellules(coord); // Utilisez activerLigneDeCellules() ici
                     coups++;
                 } else {
                     System.out.println("Coordonnée invalide. Veuillez réessayer.");
@@ -57,7 +50,7 @@ public class Partie {
     }
 
     public static void main(String[] args) {
-        Partie partie = new Partie(15);
+        Partie partie = new Partie(5);
         partie.lancerPartie();
     }
 }
