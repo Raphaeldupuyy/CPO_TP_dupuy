@@ -5,23 +5,23 @@
 package projet.light.off;
 
 /**
- * La classe CelluleLumineuse reprÃ©sente une cellule lumineuse du jeu Light Off.
- * Une cellule peut Ãªtre dans l'Ã©tat "allumÃ©e" ou "Ã©teinte".
+ * La classe CelluleLumineuse représente une cellule lumineuse du jeu Light Off.
+ * Une cellule peut être dans l'état "allumée" ou "éteinte".
  */
 public class CelluleLumineuse {
     private boolean allumee;
 
     /**
-     * Constructeur par dÃ©faut. Initialise la cellule Ã©teinte.
+     * Constructeur par défaut. Initialise la cellule éteinte.
      */
     public CelluleLumineuse() {
         allumee = false;
     }
 
     /**
-     * VÃ©rifie si la cellule est allumÃ©e.
+     * Vérifie si la cellule est allumée.
      *
-     * @return true si la cellule est allumÃ©e, sinon false.
+     * @return true si la cellule est allumée, sinon false.
      */
     public boolean estAllumee() {
         return allumee;
@@ -35,14 +35,14 @@ public class CelluleLumineuse {
     }
 
     /**
-     * Ã‰teint la cellule.
+     * Éteint la cellule.
      */
     public void eteindre() {
         allumee = false;
     }
 
     /**
-     * Inverse l'Ã©tat de la cellule (allumÃ©e devient Ã©teinte, et vice versa).
+     * Inverse l'état de la cellule (allumée devient éteinte, et vice versa).
      */
     public void inverserEtat() {
         allumee = !allumee;
@@ -51,5 +51,16 @@ public class CelluleLumineuse {
     @Override
     public String toString() {
         return allumee ? "O" : "X";
+    }
+
+    public static void main(String[] args) {
+        CelluleLumineuse cellule = new CelluleLumineuse();
+        System.out.println("État initial de la cellule : " + cellule.estAllumee());
+        cellule.allumer();
+        System.out.println("La cellule est-elle allumée ? " + cellule.estAllumee());
+        cellule.eteindre();
+        System.out.println("La cellule est-elle allumée ? " + cellule.estAllumee());
+        cellule.inverserEtat();
+        System.out.println("La cellule est-elle allumée ? " + cellule.estAllumee());
     }
 }
