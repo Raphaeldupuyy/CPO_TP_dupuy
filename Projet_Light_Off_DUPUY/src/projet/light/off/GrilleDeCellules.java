@@ -94,12 +94,37 @@ public class GrilleDeCellules {
     }
 
     public void afficherGrille() {
-        for (CelluleLumineuse[] matriceCellule : matriceCellules) {
-            for (CelluleLumineuse matriceCellule1 : matriceCellule) {
-                System.out.print(matriceCellule1 + " ");
+        int taille = getTaille();
+
+        // Affiche les indices de colonnes (numéros) en face des cases de colonnes
+        System.out.print("     ");
+        for (int i = 0; i < taille; i++) {
+            System.out.print("  " + (i + 1) + "  ");
+        }
+        System.out.println();
+
+        for (int i = 0; i < taille; i++) {
+            // Affiche une ligne horizontale de barres supérieures
+            for (int j = 0; j < taille + 1; j++) {
+                System.out.print("----+");
+            }
+            System.out.println();
+
+            // Affiche les indices de lignes (lettres)
+            System.out.print(" " + (char) ('A' + i) + "  |");
+
+            // Affiche les cellules de la ligne
+            for (int j = 0; j < taille; j++) {
+                System.out.print("  " + matriceCellules[i][j] + " |");
             }
             System.out.println();
         }
+
+        // Affiche la dernière ligne horizontale de barres inférieures
+        for (int j = 0; j < taille + 1; j++) {
+            System.out.print("----+");
+        }
+        System.out.println();
     }
 
     public int getTaille() {
@@ -107,6 +132,6 @@ public class GrilleDeCellules {
     }
 
     void inverserLigneColonne(int coord) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }
