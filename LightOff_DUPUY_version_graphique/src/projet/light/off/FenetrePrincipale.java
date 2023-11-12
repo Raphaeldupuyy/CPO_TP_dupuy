@@ -207,7 +207,7 @@ getContentPane().add(boutondiago2, new
     }//GEN-LAST:event_BoutondiagoActionPerformed
     private void finpartie() {
         nbCoups ++;
-        
+        chalenge.setVisible(false);
     if (challengeActive==true && nbCoups >= 20) {
         // Code pour gérer la fin du jeu après 20 coups en mode challenge
         // Par exemple, afficher un message, réinitialiser le jeu, etc.
@@ -224,6 +224,8 @@ getContentPane().add(boutondiago2, new
             FenetreVictoire f = new FenetreVictoire(nbCoups);
             f.setVisible(true);
             setVisible(false);
+            
+
         }
     }
 }
