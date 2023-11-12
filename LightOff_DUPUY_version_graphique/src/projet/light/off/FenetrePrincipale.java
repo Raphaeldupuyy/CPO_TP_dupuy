@@ -208,7 +208,7 @@ getContentPane().add(boutondiago2, new
     private void finpartie() {
         nbCoups ++;
         chalenge.setVisible(false);
-    if (challengeActive==true && nbCoups >= 20) {
+    if (challengeActive==true && nbCoups >= 12) {
         // Code pour gérer la fin du jeu après 20 coups en mode challenge
         // Par exemple, afficher un message, réinitialiser le jeu, etc.
         System.out.println("Fin du jeu en mode challenge après 20 coups !");
