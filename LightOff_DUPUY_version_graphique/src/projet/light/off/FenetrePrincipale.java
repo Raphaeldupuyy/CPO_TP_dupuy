@@ -194,7 +194,7 @@ getContentPane().add(boutondiago2, new
                 chalengeActionPerformed(evt);
             }
         });
-        getContentPane().add(chalenge, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 100, -1, -1));
+        getContentPane().add(chalenge, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, 70, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
