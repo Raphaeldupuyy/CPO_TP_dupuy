@@ -15,8 +15,8 @@ public class FenetreBienvenue extends javax.swing.JFrame {
      */
     public FenetreBienvenue() {
         initComponents();
-        bienvenue.setText("  Bienvenue !\n" +"Pour gagner tout les cases doivent être rose !\n" +
-                "Pour commencer une partie cliquer sur jouer");
+        //bienvenue.setText("  Bienvenue !\n" +"Pour gagner tout les cases doivent être rose !\n" +
+        //        "Pour commencer une partie cliquer sur jouer");
                 
             }
 
@@ -40,7 +40,7 @@ public class FenetreBienvenue extends javax.swing.JFrame {
         bienvenue.setColumns(20);
         bienvenue.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
         bienvenue.setRows(5);
-        bienvenue.setText("  \t\tBienvenue !\n\nRègle : pour gagner toutes les cases doivent être roses !\nDéfis bonus : terminer le je uen moins de 20 coups.\n\nPour commencer une partie cliquez sur jouer !");
+        bienvenue.setText("  \t\tBienvenue !\n\nRègle : pour gagner toutes les cases doivent être roses !\nDéfis bonus : terminer le je uen moins de 20 coups.\n\nPour commencer une partie cliquez sur jouer !\n");
         jScrollPane1.setViewportView(bienvenue);
 
         LANCER.setBackground(new java.awt.Color(204, 204, 255));
@@ -56,19 +56,17 @@ public class FenetreBienvenue extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 20, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(LANCER, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(124, 124, 124))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 424, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(LANCER, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53))
         );
